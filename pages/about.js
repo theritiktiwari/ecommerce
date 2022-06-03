@@ -1,14 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-
-import about from "../Components/assets/about.png";
-import image1 from "../Components/assets/image1.png";
-import image2 from "../Components/assets/image2.png";
-import image3 from "../Components/assets/image3.png";
-import image4 from "../Components/assets/image4.png";
-import image5 from "../Components/assets/image5.png";
-import image6 from "../Components/assets/image6.png";
 
 const About = (props) => {
   return (
@@ -18,7 +9,7 @@ const About = (props) => {
       </Head>
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 pt-20 pb-10 items-center justify-center flex-col">
-          <Image className="lg:w-2/6 md:w-3/6 w-5/6 object-cover object-center" alt="hero" src={about} width={720} height={400} />
+          <img className="lg:w-2/6 md:w-3/6 w-5/6 object-cover object-center" alt="hero" src={"https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={720} height={400} />
           <div className="lg:w-2/3 w-full mt-10">
             <h1 className="title-font text-center sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{props.name} : E-Commerce</h1>
             <p className="mb-4 leading-relaxed text-justify md:text-center">This is an ecommerce platform, which allows you to buy in a very secured manner and the process is very smooth. The developer made this according to the user comfort so that user will not have any issue reagding the payment, checking, etc. If find any issue then let us know with the contact form or any medium preferred by you.</p>
@@ -36,24 +27,24 @@ const About = (props) => {
           <div className="flex flex-wrap md:-m-2 -m-1">
             <div className="flex flex-wrap md:w-1/2">
               <div className="md:p-2 p-1 w-1/2">
-                <Image alt="gallery" className="w-full object-cover h-full object-center block" src={image1} width={500} height={300} />
+                <img alt="gallery" className="w-full object-cover h-full object-center block" src={"https://images.pexels.com/photos/2279046/pexels-photo-2279046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={500} height={300} />
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <Image alt="gallery" className="w-full object-cover h-full object-center block" src={image2} width={500} height={300} />
+                <img alt="gallery" className="w-full object-cover h-full object-center block" src={"https://images.pexels.com/photos/1845562/pexels-photo-1845562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={500} height={300} />
               </div>
               <div className="md:p-2 p-1 w-full">
-                <Image alt="gallery" className="w-full h-full object-cover object-center block" src={image3} width={600} height={360} />
+                <img alt="gallery" className="w-full h-full object-cover object-center block" src={"https://images.pexels.com/photos/58592/pexels-photo-58592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={600} height={360} />
               </div>
             </div>
             <div className="flex flex-wrap md:w-1/2">
               <div className="md:p-2 p-1 w-full">
-                <Image alt="gallery" className="w-full h-full object-cover object-center block" src={image4} width={600} height={360} />
+                <img alt="gallery" className="w-full h-full object-cover object-center block" src={"https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={600} height={360} />
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <Image alt="gallery" className="w-full object-cover h-full object-center block" src={image5} width={500} height={300} />
+                <img alt="gallery" className="w-full object-cover h-full object-center block" src={"https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={500} height={300} />
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <Image alt="gallery" className="w-full object-cover h-full object-center block" src={image6} width={500} height={300} />
+                <img alt="gallery" className="w-full object-cover h-full object-center block" src={"https://images.pexels.com/photos/1650093/pexels-photo-1650093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={500} height={300} />
               </div>
             </div>
           </div>

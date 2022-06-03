@@ -1,17 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import Link from "next/link";
 
 import { FaTruck, FaUsers } from 'react-icons/fa';
 import { MdPlace } from 'react-icons/md';
 import { AiOutlineShop } from 'react-icons/ai';
-
-import mainImage from "../Components/assets/main.png";
-import men from "../Components/assets/men.png";
-import women from "../Components/assets/women.png";
-import kids from "../Components/assets/kids.png";
-import accessories from "../Components/assets/accessories.png";
 
 export default function Home() {
   const router = useRouter();
@@ -36,7 +29,7 @@ export default function Home() {
             </form>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <Image className="object-cover object-center" alt="hero" src={mainImage} width={720} height={600} />
+            <img className="object-cover object-center" alt="hero" src={"https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={720} height={600} />
           </div>
         </div>
       </section>
@@ -54,7 +47,7 @@ export default function Home() {
           <div className="flex flex-wrap -m-4">
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center" src={women} alt="content" width={720} height={400} />
+                <img className="h-40 w-full object-cover object-center" src={"https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="content" width={720} height={400} />
                 <h2 className="text-lg text-gray-900 font-medium title-font my-2">Women&apos;s Wear</h2>
                 <p className="leading-relaxed text-base text-justify">This section is for the ladies from Indian to Western available here.</p>
                 <Link href="/products/women"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
@@ -62,7 +55,7 @@ export default function Home() {
             </div>
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center" src={men} alt="content" width={720} height={400} />
+                <img className="h-40 w-full object-cover object-center" src={"https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="content" width={720} height={400} />
                 <h2 className="text-lg text-gray-900 font-medium title-font my-2">Men&apos;s Wear</h2>
                 <p className="leading-relaxed text-base text-justify">This section is all about the men, from pant to kurta everything is here.</p>
                 <Link href="/products/men"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
@@ -70,7 +63,7 @@ export default function Home() {
             </div>
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center" src={kids} alt="content" width={720} height={400} />
+                <img className="h-40 w-full object-cover object-center" src={"https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="content" width={720} height={400} />
                 <h2 className="text-lg text-gray-900 font-medium title-font my-2">Kid&apos;s Wear</h2>
                 <p className="leading-relaxed text-base text-justify">The variety is so much diversified here, which you cannot resist for small kids.</p>
                 <Link href="/products/kids"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
@@ -78,7 +71,7 @@ export default function Home() {
             </div>
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center" src={accessories} alt="content" width={720} height={400} />
+                <img className="h-40 w-full object-cover object-center" src={"https://images.pexels.com/photos/6093960/pexels-photo-6093960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="content" width={720} height={400} />
                 <h2 className="text-lg text-gray-900 font-medium title-font my-2">Accessories</h2>
                 <p className="leading-relaxed text-base text-justify">Most important part of our life right now is some accessories for all kind of problems.</p>
                 <Link href="/products/accessories"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
