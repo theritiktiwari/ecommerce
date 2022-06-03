@@ -20,24 +20,32 @@ const index = (props) => {
                     <img alt="ecommerce" className="m-auto h-[30vh] md:h-[30vh] block" src={props.products[item].image} />
                   </a>
                   <div className="mt-4">
-                    
+
                     <h2 className="text-gray-900 title-font text-lg font-medium">{props.products[item].title}</h2>
 
                     {props.products[item].availableQuantity > 0 ? <>
                       <p className="mt-1">₹{props.products[item].price}</p>
                       <div className='mt-2'>
-                        {
+                        {/* {
                           props.products[item].color.map((color) => {
-                            return <button key={color} className={`${(color === "black" || color === "white") ? `bg-${color}` : `bg-${color}-500`} border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>
+                            return color &&  <button key={color} className={`${(color === "black" || color === "white") ? `bg-${color}` : `bg-${color}-500`} border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>
                           })
-                        }
+                        } */}
+                        {props.products[item].color.includes("black") && <button className={`bg-black border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                        {props.products[item].color.includes("white") && <button className={`bg-white border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                        {props.products[item].color.includes("red") && <button className={`bg-red-500 border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                        {props.products[item].color.includes("blue") && <button className={`bg-blue-500 border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                        {props.products[item].color.includes("gray") && <button className={`bg-gray-500 border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                        {props.products[item].color.includes("green") && <button className={`bg-green-500 border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                        {props.products[item].color.includes("yellow") && <button className={`bg-yellow-500 border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>}
                       </div>
 
                       <div className='mt-2'>
                         {
                           props.products[item].size.map((size) => {
-                            return <span key={size} className='border border-gray-400 p-1 mr-1'>{size}</span>
+                            return size && <span key={size} className='border border-gray-400 p-1 mr-1'>{size}</span>
                           })
+
                         }
                       </div></> : <div className='mt-2 mx-auto'>
                       <p className=' text-red-500 mt-2 font-bold text-center md:text-left'>Out of Stock</p>
@@ -45,7 +53,7 @@ const index = (props) => {
                   </div>
                 </div>
               </Link>
-            }) : <h1 className='font-bold'>Sorry all the products are currently out of stock. New stock is coming soon. Stay Tuned!</h1>}
+            }) : <h1 className='font-bold mx-10 my-20 text-center'>Sorry all the items are currently out of stock. New stock is coming soon. Stay Tuned!</h1>}
           </div>
         </div>
       </section>

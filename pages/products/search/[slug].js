@@ -20,7 +20,6 @@ const Slug = (props) => {
                                         <img alt="ecommerce" className="m-auto h-[30vh] md:h-[30vh] block" src={props.products[item].image} />
                                     </a>
                                     <div className="mt-4">
-                                        <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{props.products[item].category}</h3>
                                         <h2 className="text-gray-900 title-font text-lg font-medium">{props.products[item].title}</h2>
 
                                         {props.products[item].availableQuantity > 0 ? <>
@@ -28,7 +27,7 @@ const Slug = (props) => {
                                             <div className='mt-2'>
                                                 {
                                                     props.products[item].color.map((color) => {
-                                                        return <button key={color} className={`${(color === "black" || color === "white") ? `bg-${color}` : `bg-${color}-500`} border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>
+                                                        return color && <button key={color} className={`${(color === "black" || color === "white") ? `bg-${color}` : `bg-${color}-500`} border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>
                                                     })
                                                 }
                                             </div>
@@ -36,7 +35,7 @@ const Slug = (props) => {
                                             <div className='mt-2'>
                                                 {
                                                     props.products[item].size.map((size) => {
-                                                        return <span key={size} className='border border-gray-400 p-1 mr-1'>{size}</span>
+                                                        return size && <span key={size} className='border border-gray-400 p-1 mr-1'>{size}</span>
                                                     })
                                                 }
                                             </div></> : <div className='mt-2 mx-auto'>
@@ -45,7 +44,7 @@ const Slug = (props) => {
                                     </div>
                                 </div>
                             </Link>
-                        }) : <h1 className='font-semibold'>Sorry all the items are currently out of stock. New stock is coming soon. Stay Tuned!</h1>}
+                        }) : <h1 className='font-semibold mx-10 my-20 text-center'>Sorry all the items are currently out of stock. New stock is coming soon. Stay Tuned!</h1>}
                     </div>
                 </div>
             </section>
@@ -60,7 +59,7 @@ export async function getServerSideProps(context) {
     let products = await Product.find();
 
     for (let i = 0; i < products.length; i++) {
-        if (!JSON.parse(JSON.stringify(products[i])).type.includes(context.query.slug)) {
+        if (!JSON.parse(JSON.stringify(products[i])).type.includes(context.query.slug.toLowerCase())) {
             delete products[i];
         }
     }

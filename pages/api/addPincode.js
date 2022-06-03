@@ -1,23 +1,17 @@
-import Product from "../../../server/models/Product";
-import connectToDB from "../../../server/middleware/db";
+import Pin from "../../server/models/Pin";
+import connectToDB from "../../server/middleware/db";
 
 const handler = async (req, res) => {
     if (req.method === "POST") {
         try {
             for (let i = 0; i < req.body.length; i++) {
-                let p = new Product({
-                    title: req.body[i].title,
-                    slug: req.body[i].slug,
-                    description: req.body[i].description,
-                    image: req.body[i].image,
-                    category: req.body[i].category,
-                    type: req.body[i].type,
-                    size: req.body[i].size,
-                    color: req.body[i].color,
-                    price: req.body[i].price,
-                    availableQuantity: req.body[i].availableQuantity
+                let pincodes = new Pin({
+                    pincode: req.body[i].pincode,
+                    city: req.body[i].city,
+                    district: req.body[i].district,
+                    state: req.body[i].state
                 });
-                await p.save();
+                await pincodes.save();
             }
             res.status(200).json({
                 type: "success",

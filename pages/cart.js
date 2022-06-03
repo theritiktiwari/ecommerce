@@ -10,13 +10,13 @@ const Cart = (props) => {
       <Head>
         <title>Cart | {props.name}</title>
       </Head>
-      <div className='flex lg:flex-row flex-col-reverse min-h-screen'>
-        <section className="text-gray-600 body-font overflow-hidden md:w-full">
+      <div className='flex lg:flex-row flex-col-reverse'>
+        <section className="text-gray-600 body-font overflow-hidden md:w-full min-h-screen">
           <div className="container px-5 pb-20 pt-0 md:pt-20 mx-auto">
             <div className="-my-8 divide-y-2 divide-gray-100">
 
               {Object.keys(props.cart).length === 0 ? (
-                <div className="py-8 flex items-center justify-center ht-full">
+                <div className="py-24 md:py-10 flex items-center justify-center">
                   <h1 className="text-2xl font-medium text-gray-700 mb-2">Your cart is empty</h1>
                 </div>
               ) : (

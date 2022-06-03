@@ -13,14 +13,11 @@ const handler = async (req, res) => {
                 let pass = CryptoJS.AES.decrypt(user.password, process.env.CRYPTOJS_SECRET_KEY);
                 let decryptedPassword = pass.toString(CryptoJS.enc.Utf8);
                 if (req.body.password === decryptedPassword) {
-                    console.log("Password Matched");
                     if (req.body.newPassword === req.body.confirmNewPassword) {
-                        console.log("New Password Matched");
                         let updatedUser = await User.findOneAndUpdate({ email: user.email }, {
                             password: CryptoJS.AES.encrypt(req.body.newPassword, process.env.CRYPTOJS_SECRET_KEY).toString()
                         });
                         if (updatedUser) {
-                            console.log("Updated");
                             res.status(200).json({
                                 type: "success",
                                 message: "Password updated successfully"

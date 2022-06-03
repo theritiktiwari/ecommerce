@@ -146,7 +146,6 @@ const handler = async (req, res) => {
             res.status(200).json(myr);
 
         } catch (err) {
-            console.log(err)
             res.status(500).json({
                 type: "error",
                 cartClear: false,

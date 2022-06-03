@@ -5,7 +5,6 @@ import Product from "../../server/models/Product";
 import mongoose from 'mongoose';
 
 const Kids = (props) => {
-    console.log(Object.keys(props.products).length);
     return (
         <>
             <Head>
@@ -29,7 +28,7 @@ const Kids = (props) => {
                                             <div className='mt-2'>
                                                 {
                                                     props.products[item].color.map((color) => {
-                                                        return <button key={color} className={`${(color === "black" || color === "white") ? `bg-${color}` : `bg-${color}-500`} border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>
+                                                        return color && <button key={color} className={`${(color === "black" || color === "white") ? `bg-${color}` : `bg-${color}-500`} border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none`}></button>
                                                     })
                                                 }
                                             </div>
@@ -37,7 +36,7 @@ const Kids = (props) => {
                                             <div className='mt-2'>
                                                 {
                                                     props.products[item].size.map((size) => {
-                                                        return <span key={size} className='border border-gray-400 p-1 mr-1'>{size}</span>
+                                                        return size && <span key={size} className='border border-gray-400 p-1 mr-1'>{size}</span>
                                                     })
                                                 }
                                             </div></> : <div className='mt-2 mx-auto'>
@@ -47,7 +46,7 @@ const Kids = (props) => {
                                     </div>
                                 </div>
                             </Link>
-                        }) : <h1 className='font-bold'>Sorry all the items are currently out of stock. New stock is coming soon. Stay Tuned!</h1>}
+                        }) : <h1 className='font-bold mx-10 my-20 text-center'>Sorry all the items are currently out of stock. New stock is coming soon. Stay Tuned!</h1>}
                     </div>
                 </div>
             </section>

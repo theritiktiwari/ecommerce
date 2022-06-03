@@ -89,7 +89,6 @@ const handler = async (req, res) => {
                 }
             }
         } catch (err) {
-            console.log(err);
             res.status(500).json({
                 type: "error",
                 // message: "Internal Server Error"

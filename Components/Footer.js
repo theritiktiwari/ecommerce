@@ -93,13 +93,13 @@ const Footer = (props) => {
                                 <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Products</h2>
                                 <nav className="list-none mb-10">
                                     <li>
-                                        <Link href={"/products/men"} className="text-gray-600 hover:text-gray-800"><a>For Women</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href={"/products/women"} className="text-gray-600 hover:text-gray-800"><a>For Men</a></Link>
-                                    </li>
-                                    <li>
                                         <Link href={"/products/kids"} className="text-gray-600 hover:text-gray-800"><a>For Kids</a></Link>
+                                    </li>
+                                    <li>
+                                        <Link href={"/products/men"} className="text-gray-600 hover:text-gray-800"><a>For Men</a></Link>
+                                    </li>
+                                    <li>
+                                        <Link href={"/products/women"} className="text-gray-600 hover:text-gray-800"><a>For Women</a></Link>
                                     </li>
                                     <li>
                                         <Link href={"/products/accessories"} className="text-gray-600 hover:text-gray-800"><a>Accessories</a></Link>

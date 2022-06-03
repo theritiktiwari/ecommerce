@@ -1,4 +1,5 @@
-import react from "react";
+import React from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,19 +14,26 @@ import kids from "../Components/assets/kids.png";
 import accessories from "../Components/assets/accessories.png";
 
 export default function Home() {
+  const router = useRouter();
+
+  const search = (e) => {
+    e.preventDefault();
+    e.target.search.value = e.target.search.value.replace(/\s/g, "");
+    router.push(`/products/search/${e.target.search.value}`);
+  }
   return (
     <>
       <section className="text-gray-400 bg-black body-font">
         <div className="container mx-auto flex px-5 py-7 md:py-32 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Buy them
-              <br className="hidden lg:inline-block" /> Before they sold out
+              <br /> Before they sold out
             </h1>
             <p className="mb-5 text-justify leading-relaxed">Here you can find the products of your niche. Have a look on the product. Product for men, women, kids and some other accessories are available here in the store.</p>
-            <div className="flex justify-center">
-              <Link href={"/about"}><button className="inline-flex text-black bg-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-50 text-lg">Explore</button></Link>
-              <Link href={"/products"}><button className="ml-4 inline-flex text-white bg-indigo-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 text-lg">Buy Now</button></Link>
-            </div>
+            <form onSubmit={search} className="flex justify-center">
+              <input name="search" placeholder="Search a Product" className="w-2/3 md:w-auto text-black bg-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-50 text-lg" />
+              <input type="submit" value="Search" className="ml-4 w-1/3 md:w-auto text-white bg-indigo-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 text-lg" />
+            </form>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <Image className="object-cover object-center" alt="hero" src={mainImage} width={720} height={600} />

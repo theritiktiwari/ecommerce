@@ -90,7 +90,7 @@ const Signup = (props) => {
                 />
                 <div className="container px-5 py-20 mx-auto flex flex-wrap items-center flex-col-reverse md:flex-row">
 
-                    <form onSubmit={handleSubmit} method="POST" className="lg:w-2/6 md:w-1/2 mt-10 bg-gray-100 p-8 flex flex-col md:ml-auto w-full md:mr-16 md:mt-0">
+                    <form onSubmit={handleSubmit} method="POST" className=" lg:w-2/6 md:w-1/2 bg-gray-100 p-8 flex flex-col md:mr-auto w-full mt-10 md:mt-0">
                         <h2 className="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
                         <div className="relative mb-4">
                             <label htmlFor="name" className="leading-7 text-sm text-gray-600">User Name</label>
@@ -111,9 +111,9 @@ const Signup = (props) => {
                         <input type='submit' value="Signup" className="text-white cursor-pointer bg-black border-0 py-2 px-8 focus:outline-none hover:bg-gray-800 text-lg" />
                     </form>
 
-                    <div className="lg:w-3/5 md:w-1/2">
-                        <h1 className="title-font font-medium text-3xl text-gray-900">Slow-carb next level shoindcgoitch ethical authentic, poko scenester</h1>
-                        <p className="leading-relaxed mt-4">Poke slow-carb mixtape knausgaard, typewriter street art gentrify hammock starladder roathse. Craies vegan tousled etsy austin.</p>
+                    <div className="lg:w-3/5 md:w-1/2 md:pl-16 lg:pl-0 pl-0">
+                        <h1 className="title-font text-left lg:text-right mx-0 lg:mx-16 font-medium text-3xl text-gray-900">Hello! My Friend, Join With Us</h1>
+                        <p className="leading-relaxed text-left lg:text-right mx-0 lg:mx-16 mt-4">There is a spot left only for the right person as you, join us.</p>
                     </div>
                 </div>
             </section>

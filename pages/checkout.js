@@ -50,9 +50,6 @@ const Checkout = (props) => {
       setAddress(response.data.address);
       setPincode(response.data.pincode.toString());
       getPincode(response.data.pincode);
-
-      console.log(name, mobile, address, pincode, response.data.city);
-      console.log(name.length, mobile.length, address.length, pincode.length, response.data.city.length);
     }
 
   }
@@ -60,12 +57,14 @@ const Checkout = (props) => {
   const getPincode = async (pin) => {
     let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     let pinData = await pins.json();
-    if (Object.keys(pinData).includes(pin)) {
-      setCity(pinData[pin][0]);
-      setState(pinData[pin][1]);
-    } else {
-      setCity('');
-      setState('');
+    if(pin){
+      if (Object.keys(pinData).includes(pin)) {
+        setCity(pinData[pin][0]);
+        setState(pinData[pin][1]);
+      } else {
+        setCity('');
+        setState('');
+      }
     }
   }
 
@@ -112,9 +111,9 @@ const Checkout = (props) => {
         },
         "handler": {
           "notifyMerchant": function (eventName, data) {
-            console.log("notifyMerchant handler function called");
-            console.log("eventName => ", eventName);
-            console.log("data => ", data);
+            // console.log("notifyMerchant handler function called");
+            // console.log("eventName => ", eventName);
+            // console.log("data => ", data);
           }
         }
       };
@@ -122,7 +121,7 @@ const Checkout = (props) => {
         window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
           window.Paytm.CheckoutJS.invoke();
         }).catch(function onError(error) {
-          console.log("error => ", error);
+          // console.log("error => ", error);
         });
       }
     } else {
