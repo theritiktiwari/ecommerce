@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head'
+import LoadingBar from 'react-top-loading-bar';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   const name = "ECOM";
-  const API = "http://localhost:3000/api";
+
+  const router = useRouter();
+
+  const [progress, setProgress] = useState(0)
+
+  const [user, setUser] = useState({ token: null, email: null });
+  const [key, setKey] = useState();
 
   const [cart, setCart] = useState({});
   const [items, setItems] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
 
+
   useEffect(() => {
+    router.events.on('routeChangeStart', () => {
+      setProgress(40)
+    })
+    router.events.on('routeChangeComplete', () => {
+      setProgress(100)
+    })
     try {
       if (localStorage.getItem('cart')) {
         setCart(JSON.parse(localStorage.getItem('cart')));
@@ -22,7 +37,19 @@ function MyApp({ Component, pageProps }) {
       console.error(error);
       localStorage.clear();
     }
-  }, [])
+    const myUser = JSON.parse(localStorage.getItem("myUser"));
+    if (myUser) {
+      setUser({ token: myUser.token, email: myUser.email });
+    }
+    setKey(Math.random());
+  }, [router.query]);
+
+  const logout = () => {
+    localStorage.removeItem("myUser");
+    setUser({ token: null, email: null });
+    setKey(Math.random());
+    router.push("/");
+  }
 
 
   const saveCart = (myCart) => {
@@ -42,18 +69,26 @@ function MyApp({ Component, pageProps }) {
     saveCart({});
   }
 
-  const addToCart = (itemCode, qty, price, name, size, variant) => {
+  const buyNow = (itemCode, qty, price, name, size, variant, image) => {
+    let newCart = {};
+    newCart[itemCode] = { qty: 1, price, name, size, variant, image };
+    setCart(newCart);
+    saveCart(newCart);
+    router.push('/checkout');
+  }
+
+  const addToCart = (itemCode, qty, price, name, size, variant, image) => {
     let newCart = cart;
     if (itemCode in cart) {
       newCart[itemCode].qty = cart[itemCode].qty + qty;
     } else {
-      newCart[itemCode] = { qty: 1, price, name, size, variant };
+      newCart[itemCode] = { qty: 1, price, name, size, variant, image };
     }
     setCart(newCart);
     saveCart(newCart);
   }
 
-  const removeFromCart = (itemCode, qty, price, name, size, variant) => {
+  const removeFromCart = (itemCode, qty, price, name, size, variant, image) => {
     let newCart = cart;
     if (itemCode in cart) {
       newCart[itemCode].qty = cart[itemCode].qty - qty;
@@ -74,8 +109,15 @@ function MyApp({ Component, pageProps }) {
       <meta name="description" content="Homepage of ECOM" />
     </Head>
 
-    {pageProps.statusCode !== 404 && <Header name={name} />}
-    <Component {...pageProps} name={name} API={API} cart={cart} subTotal={subTotal} items={items} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} />
+    <LoadingBar
+      color='rgba(67, 56, 202, 1)'
+      height={3}
+      progress={progress}
+      waitingTime={800}
+      onLoaderFinished={() => setProgress(0)}
+    />
+    {pageProps.statusCode !== 404 && key && <Header name={name} key={key} user={user} logout={logout} />}
+    <Component {...pageProps} name={name} user={user} cart={cart} subTotal={subTotal} items={items} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} buyNow={buyNow} />
     {pageProps.statusCode !== 404 && <Footer name={name} />}
   </>
 }

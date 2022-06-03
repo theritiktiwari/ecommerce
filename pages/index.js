@@ -6,8 +6,11 @@ import { FaTruck, FaUsers } from 'react-icons/fa';
 import { MdPlace } from 'react-icons/md';
 import { AiOutlineShop } from 'react-icons/ai';
 
-import heroImage from "../Components/assets/hero.png";
-import product from "../Components/assets/product.png";
+import mainImage from "../Components/assets/main.png";
+import men from "../Components/assets/men.png";
+import women from "../Components/assets/women.png";
+import kids from "../Components/assets/kids.png";
+import accessories from "../Components/assets/accessories.png";
 
 export default function Home() {
   return (
@@ -15,17 +18,17 @@ export default function Home() {
       <section className="text-gray-400 bg-black body-font">
         <div className="container mx-auto flex px-5 py-7 md:py-32 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Before they sold out
-              <br className="hidden lg:inline-block" /> readymade gluten
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Buy them
+              <br className="hidden lg:inline-block" /> Before they sold out
             </h1>
-            <p className="mb-5 text-justify leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <p className="mb-5 text-justify leading-relaxed">Here you can find the products of your niche. Have a look on the product. Product for men, women, kids and some other accessories are available here in the store.</p>
             <div className="flex justify-center">
-              <button className="inline-flex text-black bg-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-50 text-lg">Explore</button>
-              <button className="ml-4 inline-flex text-white bg-indigo-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 text-lg">Buy Now</button>
+              <Link href={"/about"}><button className="inline-flex text-black bg-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-50 text-lg">Explore</button></Link>
+              <Link href={"/products"}><button className="ml-4 inline-flex text-white bg-indigo-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 text-lg">Buy Now</button></Link>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <Image className="object-cover object-center" alt="hero" src={heroImage} width={720} height={600} />
+            <Image className="object-cover object-center" alt="hero" src={mainImage} width={720} height={600} />
           </div>
         </div>
       </section>
@@ -38,43 +41,39 @@ export default function Home() {
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Our Products</h1>
               <div className="h-1 w-20 bg-indigo-700 rounded"></div>
             </div>
-            <p className="lg:w-2/3 w-full text-justify leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven&apos;t heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+            <p className="lg:w-2/3 w-full text-justify leading-relaxed text-gray-500">Whatever your need is here it is available, we have diversified the list of products which you find interesting, so please go through once.</p>
           </div>
           <div className="flex flex-wrap -m-4">
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center mb-6" src={product} alt="content" width={720} height={400} />
-                <h3 className="tracking-widest text-indigo-700 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-                <p className="leading-relaxed text-base text-justify">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                <Link href="/products"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
+                <Image className="h-40 w-full object-cover object-center" src={women} alt="content" width={720} height={400} />
+                <h2 className="text-lg text-gray-900 font-medium title-font my-2">Women&apos;s Wear</h2>
+                <p className="leading-relaxed text-base text-justify">This section is for the ladies from Indian to Western available here.</p>
+                <Link href="/products/women"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
               </div>
             </div>
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center mb-6" src={product} alt="content" width={720} height={400} />
-                <h3 className="tracking-widest text-indigo-700 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-                <p className="leading-relaxed text-base text-justify">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                <Link href="/products"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
+                <Image className="h-40 w-full object-cover object-center" src={men} alt="content" width={720} height={400} />
+                <h2 className="text-lg text-gray-900 font-medium title-font my-2">Men&apos;s Wear</h2>
+                <p className="leading-relaxed text-base text-justify">This section is all about the men, from pant to kurta everything is here.</p>
+                <Link href="/products/men"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
               </div>
             </div>
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center mb-6" src={product} alt="content" width={720} height={400} />
-                <h3 className="tracking-widest text-indigo-700 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-                <p className="leading-relaxed text-base text-justify">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                <Link href="/products"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
+                <Image className="h-40 w-full object-cover object-center" src={kids} alt="content" width={720} height={400} />
+                <h2 className="text-lg text-gray-900 font-medium title-font my-2">Kid&apos;s Wear</h2>
+                <p className="leading-relaxed text-base text-justify">The variety is so much diversified here, which you cannot resist for small kids.</p>
+                <Link href="/products/kids"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
               </div>
             </div>
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6">
-                <Image className="h-40 w-full object-cover object-center mb-6" src={product} alt="content" width={720} height={400} />
-                <h3 className="tracking-widest text-indigo-700 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-                <p className="leading-relaxed text-base text-justify">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                <Link href="/products"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
+                <Image className="h-40 w-full object-cover object-center" src={accessories} alt="content" width={720} height={400} />
+                <h2 className="text-lg text-gray-900 font-medium title-font my-2">Accessories</h2>
+                <p className="leading-relaxed text-base text-justify">Most important part of our life right now is some accessories for all kind of problems.</p>
+                <Link href="/products/accessories"><a className="block mt-2 text-white bg-black border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-800 w-full text-center">Click Here</a></Link>
               </div>
             </div>
           </div>
@@ -84,10 +83,6 @@ export default function Home() {
 
       <section className="text-gray-400 bg-black body-font">
         <div className="container px-5 py-16 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Master Cleanse Reliac Heirloom</h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven&apos;t heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-          </div>
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div className="border-2 border-gray-800 px-4 py-6 rounded-lg">
@@ -128,8 +123,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
     </>
   )
 }

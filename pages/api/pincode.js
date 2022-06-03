@@ -1,5 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import pincodes from "../../Components/assets/pincodes.json";
 
 export default function handler(req, res) {
-  res.status(200).json([206244, 209527, 110003, 600127]);
+  res.status(200).json(pincodes);
 }
