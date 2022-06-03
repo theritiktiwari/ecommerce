@@ -115,9 +115,9 @@ function MyApp({ Component, pageProps }) {
       waitingTime={800}
       onLoaderFinished={() => setProgress(0)}
     />
-    {pageProps.statusCode !== 404 && key && <Header name={name} key={key} user={user} logout={logout} />}
+    {pageProps.statusCode !== 404 && pageProps.statusCode !== 500 && key && <Header name={name} key={key} user={user} logout={logout} />}
     <Component {...pageProps} name={name} user={user} cart={cart} subTotal={subTotal} items={items} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} buyNow={buyNow} />
-    {pageProps.statusCode !== 404 && <Footer name={name} />}
+    {pageProps.statusCode !== 404 && pageProps.statusCode !== 500 && <Footer name={name} />}
   </>
 }
 
