@@ -71,8 +71,8 @@ const Footer = (props) => {
                             </div>
                         </div>
 
-                        <div className="lg:w-2/3 md:w-1/2 w-full px-4 flex md:justify-around justify-between mt-10 md:mt-0">
-                            <div className='md:mx-5'>
+                        <div className="lg:w-2/3 md:w-1/2 w-full px-5 flex md:justify-around justify-between mt-10 md:mt-0">
+                            <div className='px-0 md:px-3'>
                                 <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Links</h2>
                                 <ul className="list-none mb-10">
                                     <li>
@@ -118,7 +118,7 @@ const Footer = (props) => {
                             </svg>
                             <span className="ml-3 text-xl">{props.name}</span>
                         </a>
-                        <p className="text-sm text-gray-500 text-center ml-0 md:ml-2 md:mt-0 mt-4">© {copyright(2020)} —
+                        <p className="text-sm text-gray-500 text-center px-0 md:px-3 md:mt-0 mt-4">© {copyright(2020)} —
                             <a href="https://theritiktiwari.web.app" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@theritiktiwari</a>. All Rights Reserved.
                         </p>
                         <span className="flex md:ml-auto md:mt-0 mt-4 justify-center md:justify-end">

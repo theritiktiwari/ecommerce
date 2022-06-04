@@ -27,25 +27,26 @@ const Header = (props) => {
                         <Link href={"/contact"}><a className="ml-2 mr-2 hover:text-gray-900">Contact</a></Link>
                         {!props.user.token && <Link href={"/auth"}><a className="ml-2 mr-2 hover:text-gray-900">Login</a></Link>}
                     </nav>
-                    <div className="absolute right-0 top-5 mx-5 px-5">
-                        <Link href={"/cart"}>
-                            <a className='absolute right-12 top-2 mr-3'><FaShoppingCart className='text-2xl' /></a>
-                        </Link>
+                    <div className="absolute right-0 top-5 mx-5 px-5 flex mt-2 md:mt-0">
                         {props.user.token &&
-                            <a className='absolute right-20 top-2 mr-3 cursor-pointer'>
-                                <FaUserCircle onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='text-2xl' />
-                            </a>
+                            <>
+                                <a className='mx-3 cursor-pointer'>
+                                    <FaUserCircle onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='text-2xl' />
+                                </a>
+                                {dropDown && <div onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='absolute right-20 top-14 md:top-12 px-5 py-2 w-36 bg-white  border shadow-lg'>
+                                    <ul>
+                                        <Link href={"/profile"}><a><li className='my-2'>My Account</li></a></Link>
+                                        <Link href={"/orders"}><a><li className='my-2'>My Orders</li></a></Link>
+                                        <li onClick={props.logout} className='cursor-pointer text-red-500 my-2'><a>Logout</a></li>
+                                    </ul>
+                                </div>}
+                            </>
                         }
+
+                        <Link href={"/cart"}>
+                            <a className='ml-3'><FaShoppingCart className='text-2xl' /></a>
+                        </Link>
                     </div>
-                    {props.user.token && dropDown &&
-                        <div onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='absolute right-20 top-14 md:top-12 px-5 py-2 w-36 bg-white  border shadow-lg'>
-                            <ul>
-                                <Link href={"/profile"}><a><li className='my-2'>My Account</li></a></Link>
-                                <Link href={"/orders"}><a><li className='my-2'>My Orders</li></a></Link>
-                                <li onClick={props.logout} className='cursor-pointer text-red-500 my-2'><a>Logout</a></li>
-                            </ul>
-                        </div>
-                    }
                 </div>
             </header>
         </>
