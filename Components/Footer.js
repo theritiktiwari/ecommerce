@@ -46,7 +46,7 @@ const Footer = (props) => {
     }
     return (
         <>
-            <footer className="text-gray-600 body-font bg-gray-100">
+            <footer className="text-gray-600 body-font">
                 <ToastContainer
                     position="bottom-right"
                     autoClose={3000}
@@ -58,8 +58,8 @@ const Footer = (props) => {
                     draggable
                     pauseOnHover
                 />
-                <div className="container px-5 pt-4 md:pt-10 mx-auto">
-                    <div className="flex justify-between flex-col md:flex-row text-left order-first">
+                <div className="container px-5 pt-4 md:pt-20 mx-auto bg-gray-100">
+                    <div className="flex justify-between flex-col md:flex-row text-left">
                         <div className="lg:w-1/3 md:w-1/2 w-full">
                             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE NOW</h2>
                             <div className="flex flex-col">
@@ -72,9 +72,9 @@ const Footer = (props) => {
                         </div>
 
                         <div className="lg:w-2/3 md:w-1/2 w-full px-4 flex md:justify-around justify-between mt-10 md:mt-0">
-                            <div className='md:mx-10'>
+                            <div className='md:mx-5'>
                                 <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Links</h2>
-                                <nav className="list-none mb-10">
+                                <ul className="list-none mb-10">
                                     <li>
                                         <Link href={"/"} className="text-gray-600 hover:text-gray-800"><a>Home</a></Link>
                                     </li>
@@ -87,11 +87,11 @@ const Footer = (props) => {
                                     <li>
                                         <Link href={"/products"} className="text-gray-600 hover:text-gray-800"><a>All Products</a></Link>
                                     </li>
-                                </nav>
+                                </ul>
                             </div>
                             <div>
                                 <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Products</h2>
-                                <nav className="list-none mb-10">
+                                <ul className="list-none mb-10">
                                     <li>
                                         <Link href={"/products/kids"} className="text-gray-600 hover:text-gray-800"><a>For Kids</a></Link>
                                     </li>
@@ -104,24 +104,24 @@ const Footer = (props) => {
                                     <li>
                                         <Link href={"/products/accessories"} className="text-gray-600 hover:text-gray-800"><a>Accessories</a></Link>
                                     </li>
-                                </nav>
+                                </ul>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div className='bg-gray-200'>
-                    <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+                <div className='bg-gray-300'>
+                    <div className="container px-5 py-6 mx-auto flex items-center md:flex-row flex-col">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-black rounded-full" viewBox="0 0 24 24">
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                             </svg>
                             <span className="ml-3 text-xl">{props.name}</span>
                         </a>
-                        <p className="text-sm text-gray-500 text-center sm:ml-6 sm:mt-0 mt-4">© {copyright(2020)} —
+                        <p className="text-sm text-gray-500 text-center ml-0 md:ml-2 md:mt-0 mt-4">© {copyright(2020)} —
                             <a href="https://theritiktiwari.web.app" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@theritiktiwari</a>. All Rights Reserved.
                         </p>
-                        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                        <span className="flex md:ml-auto md:mt-0 mt-4 justify-center md:justify-end">
                             <a className="ml-3 text-gray-500 text-xl hover:text-blue-500 transition-colors duration-300 ease-in-out" href="#">
                                 <FaFacebookF />
                             </a>

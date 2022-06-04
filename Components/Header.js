@@ -20,19 +20,21 @@ const Header = (props) => {
                             <span className="ml-3 text-xl">{props.name}</span>
                         </a>
                     </Link>
-                    <nav className="md:mx-auto flex flex-wrap items-center text-base justify-center space-x-4">
-                        <Link href={"/"}><a className="hover:text-gray-900">Home</a></Link>
-                        <Link href={"/about"}><a className="hover:text-gray-900">About</a></Link>
-                        <Link href={"/products"}><a className="hover:text-gray-900">All Products</a></Link>
-                        <Link href={"/contact"}><a className="hover:text-gray-900">Contact</a></Link>
-                        {!props.user.token && <Link href={"/auth"}><a className="hover:text-gray-900">Login</a></Link>}
+                    <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center space-x-4">
+                        <Link href={"/"}><a className="ml-2 mr-2 hover:text-gray-900">Home</a></Link>
+                        <Link href={"/about"}><a className="ml-2 mr-2 hover:text-gray-900">About</a></Link>
+                        <Link href={"/products"}><a className="ml-2 mr-2 hover:text-gray-900">All Products</a></Link>
+                        <Link href={"/contact"}><a className="ml-2 mr-2 hover:text-gray-900">Contact</a></Link>
+                        {!props.user.token && <Link href={"/auth"}><a className="ml-2 mr-2 hover:text-gray-900">Login</a></Link>}
                     </nav>
                     <Link href={"/cart"}>
-                        <a><FaShoppingCart className='cursor-pointer text-2xl absolute right-12 top-7' /></a>
+                        <a className='absolute right-12 top-7 mr-3'><FaShoppingCart className='text-2xl' /></a>
                     </Link>
                     {props.user.token &&
                         <>
-                            <FaUserCircle onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='cursor-pointer text-2xl absolute right-20 top-7' />
+                            <a className='absolute right-20 top-7 mr-3'>
+                                <FaUserCircle onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='text-2xl' />
+                            </a>
 
                             {dropDown && <div onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='absolute right-20 top-14 md:top-12 px-5 py-2 w-36 bg-white  border shadow-lg'>
                                 <ul className=''>
