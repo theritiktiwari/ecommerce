@@ -119,7 +119,7 @@ const Footer = (props) => {
                             <span className="ml-3 text-xl">{props.name}</span>
                         </a>
                         <p className="text-sm text-gray-500 text-center sm:ml-6 sm:mt-0 mt-4">© {copyright(2020)} —
-                            <a href="https://instagram.com/theritiktiwari" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@theritiktiwari</a>. All Rights Reserved.
+                            <a href="https://theritiktiwari.web.app" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@theritiktiwari</a>. All Rights Reserved.
                         </p>
                         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                             <a className="ml-3 text-gray-500 text-xl hover:text-blue-500 transition-colors duration-300 ease-in-out" href="#">
