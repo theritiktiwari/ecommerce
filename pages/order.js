@@ -57,7 +57,7 @@ const MyOrder = (props) => {
                                                 <tbody>
                                                     {Object.keys(products).map((item) => {
                                                         return <tr key={item} className="border-b">
-                                                            <td className="text-left px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{products[item].name} ({products[item].size}/{products[item].variant})</td>
+                                                            <td className="text-left px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{products[item].name} <span className="capitalize">{(products[item].size && products[item].variant) ? `(${products[item].size}/${products[item].variant})` : (products[item].size ? `(${products[item].size})` : (products[item].variant ? `(${products[item].variant})` : ``))}</span></td>
                                                             <td className="text-center text-sm  text-gray-900 font-normal px-6 py-4 whitespace-nowrap">
                                                                 {products[item].qty}
                                                             </td>

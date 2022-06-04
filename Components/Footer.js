@@ -46,7 +46,7 @@ const Footer = (props) => {
     }
     return (
         <>
-            <footer className="text-gray-600 body-font">
+            <footer className="text-gray-600 body-font bg-gray-100">
                 <ToastContainer
                     position="bottom-right"
                     autoClose={3000}
@@ -58,7 +58,7 @@ const Footer = (props) => {
                     draggable
                     pauseOnHover
                 />
-                <div className="container px-5 pt-4 md:pt-20 mx-auto bg-gray-100">
+                <div className="container px-5 pt-4 md:pt-20 mx-auto">
                     <div className="flex justify-between flex-col md:flex-row text-left">
                         <div className="lg:w-1/3 md:w-1/2 w-full">
                             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE NOW</h2>

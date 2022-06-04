@@ -25,48 +25,48 @@ const Checkout = (props) => {
     }
   }, [name, mobile, address, pincode, city]);
 
-  useEffect(() => {
-    const myUser = JSON.parse(localStorage.getItem('myUser'));
-    if (!myUser) {
-      router.push("/auth");
-    } else {
-      fetchUser(myUser.token);
-    }
-  }, [router]);
-
-  const fetchUser = async (token) => {
-    let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/auth/getUser`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ token: token })
-    });
-    let response = await a.json();
-    if (response.type === "success") {
-      setName(response.data.name);
-      setEmail(response.data.email);
-      setMobile(response.data.mobile.toString());
-      setAddress(response.data.address);
-      setPincode(response.data.pincode.toString());
-      getPincode(response.data.pincode);
-    }
-
-  }
-
   const getPincode = async (pin) => {
     let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     let pinData = await pins.json();
     if(pin){
-      if (Object.keys(pinData).includes(pin)) {
+      if (pinData[pin]) {
         setCity(pinData[pin][0]);
         setState(pinData[pin][1]);
       } else {
         setCity('');
         setState('');
       }
-    }
+    } 
   }
+
+  useEffect(() => {
+    const myUser = JSON.parse(localStorage.getItem('myUser'));
+    if (!myUser) {
+      router.push("/auth");
+    } else {
+      const fetchUser = async (token) => {
+        let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/auth/getUser`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ token: token })
+        });
+        let response = await a.json();
+        if (response.type === "success") {
+          setName(response.data.name);
+          setEmail(response.data.email);
+          setMobile(response.data.mobile.toString());
+          setAddress(response.data.address);
+          setPincode(response.data.pincode.toString());
+          getPincode(response.data.pincode);
+        }
+      }
+
+      fetchUser(myUser.token);
+    }
+  }, [router]);
+
 
   const handleChange = async (e) => {
     e.target.name == "name" ? setName(e.target.value) : null;
