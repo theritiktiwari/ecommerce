@@ -20,7 +20,7 @@ const Header = (props) => {
                             <span className="ml-3 text-xl">{props.name}</span>
                         </a>
                     </Link>
-                    <nav className="md:mx-auto px-5 flex flex-wrap items-center text-base justify-center">
+                    <nav className="mx-auto px-5 flex flex-wrap items-center text-base justify-center">
                         <Link href={"/"}><a className="ml-2 mr-2 hover:text-gray-900">Home</a></Link>
                         <Link href={"/about"}><a className="ml-2 mr-2 hover:text-gray-900">About</a></Link>
                         <Link href={"/products"}><a className="ml-2 mr-2 hover:text-gray-900">All Products</a></Link>
@@ -33,7 +33,7 @@ const Header = (props) => {
                                 <a className='mx-3 cursor-pointer'>
                                     <FaUserCircle onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='text-2xl' />
                                 </a>
-                                {dropDown && <div onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className='absolute right-20 top-14 md:top-12 px-5 py-2 w-36 bg-white  border shadow-lg'>
+                                {dropDown && <div onMouseOver={() => setDropDown(true)} onMouseLeave={() => setDropDown(false)} className="absolute right-0 top-5 px-5 py-2 bg-white border shadow-lg" style={{ width: "130px" }}>
                                     <ul>
                                         <Link href={"/profile"}><a><li className='my-2'>My Account</li></a></Link>
                                         <Link href={"/orders"}><a><li className='my-2'>My Orders</li></a></Link>
