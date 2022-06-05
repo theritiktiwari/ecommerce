@@ -3,16 +3,18 @@
 This is a basic ecommerce application. It provides user a great experience to buy products with secure payment.
 
 #### Features :
-- [User authentication](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Authentication.mov)
-- [User profile and management](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/My%20Account.mov)
-- [Manage and track orders](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Orders.mov)
-- [Manage orders in cart and checkout](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Checkout.mov)
-- [Pincode service](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Pincode.mov)
-- [Payment gateway](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Payment.mov)
+- User authentication
+- User profile and management
+- Manage and track orders
+- Manage orders in cart and checkout
+- Pincode service
+- Payment gateway
 
 <!-- • Email service.
 - SMS service.
 - Admin dashboard. -->
+
+[Click here](https://drive.google.com/drive/folders/1aW40fPqsD-kmhdh5Ij7K0GgGCOhX8Vqo?usp=sharing) for demo videos.
 
 #### Technologies :
 - [NextJS](https://nextjs.org/)
@@ -43,13 +45,13 @@ Start editing the page by modifying `pages/index.js`.
 
 ### Images
 
-| ![Home](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Home.png) | ![Category](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Category.png) |
+| ![Home](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Home.png) | ![Category](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Category.png) |
 |-------|----------|
-| ![Footer](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Footer.png) | ![About](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/About.png) |
-| ![Gallery](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Gallery.png) | ![Product](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Products%201.png) |
-| ![Product](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Products%202.png) | ![Contact](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Contact.png) |
-| ![Login](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Login.png) | ![Signup](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Signup.png) |
-| ![Cart](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Cart.png) | ![Account](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Account.png) |
-| ![Checkout](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Address.png) | ![Checkout](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Checkout.png) |
-| ![Payment](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Payment.png) | ![Order](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Order%201.png) |
-| ![Order](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Order%202.png) | ![Orders](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Images/Orders.png) |
+| ![Footer](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Footer.png) | ![About](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/About.png) |
+| ![Gallery](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Gallery.png) | ![Product](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Products%201.png) |
+| ![Product](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Products%202.png) | ![Contact](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Contact.png) |
+| ![Login](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Login.png) | ![Signup](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Signup.png) |
+| ![Cart](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Cart.png) | ![Account](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Account.png) |
+| ![Checkout](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Address.png) | ![Checkout](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Checkout.png) |
+| ![Payment](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Payment.png) | ![Order](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Order%201.png) |
+| ![Order](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Order%202.png) | ![Orders](https://github.com/theritiktiwari/ecommerce/blob/main/Demo/Orders.png) |
